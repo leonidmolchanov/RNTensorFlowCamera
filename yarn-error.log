@@ -1,0 +1,45 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add -D react-native-swift-bridge
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/leonidmolcanov/Documents/PhpstormProjects/BookFinder/node_modules/.bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.18.4
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/leonidmolcanov/Documents/PhpstormProjects/BookFinder/package.json: Unexpected token } in JSON at position 391
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "tenserFlowCamera",
+    "version": "0.0.1",
+    "peerDependencies": {
+      "react-native-swift": "^1.0.0"
+    },
+    "scripts": {
+      "bridge": "react-native-swift-bridge",
+      "watch": "react-native-swift-bridge --watch",
+      "addpod": "react-native-pod addpod",
+      "removepod": "react-native-pod removepod"
+    },
+    "main": "index.js",
+    "isSwift": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		716CFE8D205C40D500800D68 /* tenserFlowCameraViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CFE8C205C40D500800D68 /* tenserFlowCameraViewManager.swift */; };
+		716CFE8F205C40EA00800D68 /* tenserFlowCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CFE8E205C40EA00800D68 /* tenserFlowCameraView.swift */; };
+		716CFEA0205C74DD00800D68 /* tenserFlowCameraBasicViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CFE9F205C74DD00800D68 /* tenserFlowCameraBasicViewManager.swift */; };
+		71D8F38A1FB7AA9D0000973C /* tenserFlowCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D8F3891FB7AA9D0000973C /* tenserFlowCamera.swift */; };
+		9E2C1A8CA127460F84481E0A /* rn-swift-bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BAAF8CC20459CA1779AA1 /* rn-swift-bridge.m */; };
+		C763124826C42C2C00C44033 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763124726C42C2C00C44033 /* EventEmitter.swift */; };
+		C763124A26C42CF300C44033 /* ReactNativeEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763124926C42CF300C44033 /* ReactNativeEventEmitter.swift */; };
+		C769BF2626C2DA9B0065D150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF2526C2DA9B0065D150 /* ViewController.swift */; };
+		C769BF2A26C2DAB20065D150 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF2926C2DAB20065D150 /* CurvedView.swift */; };
+		C769BF2E26C2DAC20065D150 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF2D26C2DAC10065D150 /* CVPixelBufferExtension.swift */; };
+		C769BF3226C2EC030065D150 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF3126C2EC030065D150 /* CurvedView.swift */; };
+		C769BF3426C2FE750065D150 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF3326C2FE750065D150 /* ModelDataHandler.swift */; };
+		C769BF3626C318510065D150 /* Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF3526C318510065D150 /* Inference.swift */; };
+		C769BF3826C318DE0065D150 /* infoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769BF3726C318DE0065D150 /* infoCell.swift */; };
+		C7842AAA26C1A93400933D63 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7842AA926C1A93400933D63 /* Calendar.swift */; };
+		C7842AAD26C1BF7C00933D63 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7842AAC26C1BF7C00933D63 /* PreviewView.swift */; };
+		C7842AAF26C1E49400933D63 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7842AAE26C1E49400933D63 /* CameraFeedManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		71D8F37A1FB7A97B0000973C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2C7BAAF8CC20459CA1779AA1 /* rn-swift-bridge.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; path = "rn-swift-bridge.m"; sourceTree = "<group>"; };
+		716CFE8C205C40D500800D68 /* tenserFlowCameraViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tenserFlowCameraViewManager.swift; sourceTree = "<group>"; };
+		716CFE8E205C40EA00800D68 /* tenserFlowCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tenserFlowCameraView.swift; sourceTree = "<group>"; };
+		716CFE9F205C74DD00800D68 /* tenserFlowCameraBasicViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tenserFlowCameraBasicViewManager.swift; sourceTree = "<group>"; };
+		71D8F37C1FB7A97B0000973C /* libtenserFlowCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtenserFlowCamera.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D8F3881FB7AA9D0000973C /* rn-swift-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rn-swift-bridge.h"; sourceTree = "<group>"; };
+		71D8F3891FB7AA9D0000973C /* tenserFlowCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tenserFlowCamera.swift; sourceTree = "<group>"; };
+		C763124726C42C2C00C44033 /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
+		C763124926C42CF300C44033 /* ReactNativeEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeEventEmitter.swift; sourceTree = "<group>"; };
+		C769BF2526C2DA9B0065D150 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../test/examples/lite/examples/image_classification/ios/ImageClassification/ViewControllers/ViewController.swift; sourceTree = "<group>"; };
+		C769BF2926C2DAB20065D150 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurvedView.swift; path = ../../../../test/examples/lite/examples/image_classification/ios/ImageClassification/Views/CurvedView.swift; sourceTree = "<group>"; };
+		C769BF2D26C2DAC10065D150 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVPixelBufferExtension.swift; path = ../../../../test/examples/lite/examples/image_classification/ios/ImageClassification/Extensions/CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		C769BF3126C2EC030065D150 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurvedView.swift; path = ../../../../test/examples/lite/examples/image_classification/ios/ImageClassification/Views/CurvedView.swift; sourceTree = "<group>"; };
+		C769BF3326C2FE750065D150 /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		C769BF3526C318510065D150 /* Inference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inference.swift; sourceTree = "<group>"; };
+		C769BF3726C318DE0065D150 /* infoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoCell.swift; sourceTree = "<group>"; };
+		C7842AA926C1A93400933D63 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		C7842AAC26C1BF7C00933D63 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		C7842AAE26C1E49400933D63 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		C7AF496826C321D1004151F1 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = labels.txt; path = ../labels.txt; sourceTree = "<group>"; };
+		C7AF496926C321D2004151F1 /* mobilenet_quant_v1_224.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenet_quant_v1_224.tflite; path = ../mobilenet_quant_v1_224.tflite; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71D8F3791FB7A97B0000973C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71D8F3731FB7A97B0000973C = {
+			isa = PBXGroup;
+			children = (
+				71D8F37E1FB7A97B0000973C /* tenserFlowCamera */,
+				71D8F37D1FB7A97B0000973C /* Products */,
+				71D8F3881FB7AA9D0000973C /* rn-swift-bridge.h */,
+				C7842AA926C1A93400933D63 /* Calendar.swift */,
+				C7842AAE26C1E49400933D63 /* CameraFeedManager.swift */,
+				C7842AAC26C1BF7C00933D63 /* PreviewView.swift */,
+				C769BF3326C2FE750065D150 /* ModelDataHandler.swift */,
+				C769BF3126C2EC030065D150 /* CurvedView.swift */,
+				C7AF496826C321D1004151F1 /* labels.txt */,
+				C7AF496926C321D2004151F1 /* mobilenet_quant_v1_224.tflite */,
+				C769BF3726C318DE0065D150 /* infoCell.swift */,
+				C763124726C42C2C00C44033 /* EventEmitter.swift */,
+				C769BF3526C318510065D150 /* Inference.swift */,
+				C763124926C42CF300C44033 /* ReactNativeEventEmitter.swift */,
+				C769BF2526C2DA9B0065D150 /* ViewController.swift */,
+				C769BF2D26C2DAC10065D150 /* CVPixelBufferExtension.swift */,
+				C769BF2926C2DAB20065D150 /* CurvedView.swift */,
+				2C7BAAF8CC20459CA1779AA1 /* rn-swift-bridge.m */,
+				C7842AA826C1A84300933D63 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		71D8F37D1FB7A97B0000973C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71D8F37C1FB7A97B0000973C /* libtenserFlowCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71D8F37E1FB7A97B0000973C /* tenserFlowCamera */ = {
+			isa = PBXGroup;
+			children = (
+				71D8F3891FB7AA9D0000973C /* tenserFlowCamera.swift */,
+				716CFE8C205C40D500800D68 /* tenserFlowCameraViewManager.swift */,
+				716CFE8E205C40EA00800D68 /* tenserFlowCameraView.swift */,
+				716CFE9F205C74DD00800D68 /* tenserFlowCameraBasicViewManager.swift */,
+			);
+			path = tenserFlowCamera;
+			sourceTree = "<group>";
+		};
+		C7842AA826C1A84300933D63 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71D8F37B1FB7A97B0000973C /* tenserFlowCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71D8F3851FB7A97B0000973C /* Build configuration list for PBXNativeTarget "tenserFlowCamera" */;
+			buildPhases = (
+				71D8F3781FB7A97B0000973C /* Sources */,
+				71D8F3791FB7A97B0000973C /* Frameworks */,
+				71D8F37A1FB7A97B0000973C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tenserFlowCamera;
+			productName = tenserFlowCamera;
+			productReference = 71D8F37C1FB7A97B0000973C /* libtenserFlowCamera.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71D8F3741FB7A97B0000973C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 920;
+				ORGANIZATIONNAME = "Ray Deck";
+				TargetAttributes = {
+					71D8F37B1FB7A97B0000973C = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 71D8F3771FB7A97B0000973C /* Build configuration list for PBXProject "tenserFlowCamera" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 71D8F3731FB7A97B0000973C;
+			productRefGroup = 71D8F37D1FB7A97B0000973C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71D8F37B1FB7A97B0000973C /* tenserFlowCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71D8F3781FB7A97B0000973C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C769BF3626C318510065D150 /* Inference.swift in Sources */,
+				C769BF2626C2DA9B0065D150 /* ViewController.swift in Sources */,
+				C769BF2E26C2DAC20065D150 /* CVPixelBufferExtension.swift in Sources */,
+				716CFE8F205C40EA00800D68 /* tenserFlowCameraView.swift in Sources */,
+				C769BF3826C318DE0065D150 /* infoCell.swift in Sources */,
+				C769BF3226C2EC030065D150 /* CurvedView.swift in Sources */,
+				C7842AAA26C1A93400933D63 /* Calendar.swift in Sources */,
+				C763124A26C42CF300C44033 /* ReactNativeEventEmitter.swift in Sources */,
+				C7842AAF26C1E49400933D63 /* CameraFeedManager.swift in Sources */,
+				C7842AAD26C1BF7C00933D63 /* PreviewView.swift in Sources */,
+				C763124826C42C2C00C44033 /* EventEmitter.swift in Sources */,
+				C769BF3426C2FE750065D150 /* ModelDataHandler.swift in Sources */,
+				C769BF2A26C2DAB20065D150 /* CurvedView.swift in Sources */,
+				716CFEA0205C74DD00800D68 /* tenserFlowCameraBasicViewManager.swift in Sources */,
+				716CFE8D205C40D500800D68 /* tenserFlowCameraViewManager.swift in Sources */,
+				71D8F38A1FB7AA9D0000973C /* tenserFlowCamera.swift in Sources */,
+				9E2C1A8CA127460F84481E0A /* rn-swift-bridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		71D8F3831FB7A97B0000973C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		71D8F3841FB7A97B0000973C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71D8F3861FB7A97B0000973C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3UK2WGC8YX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../../../ios/Pods",
+					"$(SRCROOT)/../../../node_modules/react-native-swift-registry/ios",
+					"$(SRCROOT)/../../../../node_modules/react-native-swift-registry/ios",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../../../ios/Pods",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71D8F3871FB7A97B0000973C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3UK2WGC8YX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../../../ios/Pods",
+					"$(SRCROOT)/../../../node_modules/react-native-swift-registry/ios",
+					"$(SRCROOT)/../../../../node_modules/react-native-swift-registry/ios",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../../../ios/Pods",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rn-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71D8F3771FB7A97B0000973C /* Build configuration list for PBXProject "tenserFlowCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D8F3831FB7A97B0000973C /* Debug */,
+				71D8F3841FB7A97B0000973C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71D8F3851FB7A97B0000973C /* Build configuration list for PBXNativeTarget "tenserFlowCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D8F3861FB7A97B0000973C /* Debug */,
+				71D8F3871FB7A97B0000973C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71D8F3741FB7A97B0000973C /* Project object */;
+}
