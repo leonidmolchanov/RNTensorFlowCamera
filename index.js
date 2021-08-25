@@ -1,3 +1,3 @@
-import TFImageClassification, {TF, TFNative} from "./TFImageClassification";
+import RNTensorFlowCamera, {TF, TFNative} from "./RNTensorFlowCamera";
 
-export { TFImageClassification, TF , TFNative};
+export { RNTensorFlowCamera, TF , TFNative};

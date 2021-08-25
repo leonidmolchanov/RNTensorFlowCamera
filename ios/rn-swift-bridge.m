@@ -4,7 +4,7 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(TFImageClassification, RCTViewManager)
+@interface RCT_EXTERN_MODULE(RNTensorFlowCamera, RCTViewManager)
 RCT_EXTERN_METHOD(onData:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(startCapture)
 RCT_EXTERN_METHOD(stopCapture)
@@ -16,6 +16,6 @@ RCT_EXTERN_METHOD(stopCapture)
 
 
 - (NSArray<NSString *> *)supportedEvents {
-  return @[@"TFImageClassification"];
+  return @[@"RNTensorFlowCamera"];
 }
 @end

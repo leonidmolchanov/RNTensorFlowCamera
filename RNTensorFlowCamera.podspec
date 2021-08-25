@@ -4,11 +4,11 @@ package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 version = package['version']
 
 Pod::Spec.new do |s|
-  s.name           = 'TFImageClassification'
+  s.name           = 'RNTensorFlowCamera'
   s.version      = version
-   s.summary      = "A native TFImageClassification react native component."
+   s.summary      = "A native RNTensorFlowCamera react native component."
 
-   s.description  = "A native TFImageClassification react native component."
+   s.description  = "A native RNTensorFlowCamera react native component."
 
    s.homepage     = "https://gitlab.audienzz.ch/audienzz/appnexus-app-lib.git"
    s.license      = "COMMERCIAL"

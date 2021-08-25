@@ -21,22 +21,22 @@ import AVFoundation
  */
 
 
-@objc(TFImageClassification)
-class TFImageClassification : RCTViewManager {
-    
-    
+@objc(RNTensorFlowCamera)
+class RNTensorFlowCamera : RCTViewManager {
+
+
      var sendDataCallback: RCTResponseSenderBlock?
 
     @objc func startCapture() {
         print("start Capture")
         cameraCapture.checkCameraConfigurationAndStartSession()
     }
-    
+
     @objc func stopCapture() {
         print("stop Capture")
         cameraCapture.stopSession()
     }
-    
+
     private var eventEmitter: ReactNativeEventEmitter!
     private let delayBetweenInferencesMs: Double = 1000
     private var previousInferenceTimeMs: TimeInterval = Date.distantPast.timeIntervalSince1970 * 1000
@@ -48,43 +48,43 @@ class TFImageClassification : RCTViewManager {
 
     private var modelDataHandler: ModelDataHandler? =
       ModelDataHandler(modelFileInfo: MobileNet.modelInfo, labelsFileInfo: MobileNet.labelsInfo)
-        
+
     private var result: Result?
-    
+
   override func view() -> UIView! {
     cameraCapture.delegate = self
-    
+
     return previewView
   }
 }
 
 
-extension TFImageClassification: CameraFeedManagerDelegate {
+extension RNTensorFlowCamera: CameraFeedManagerDelegate {
     func presentCameraPermissionsDeniedAlert() {
-        
-        
+
+
     }
-    
+
     func presentVideoConfigurationErrorAlert() {
-        
-        
+
+
     }
-    
+
     func sessionRunTimeErrorOccured() {
-        
-        
+
+
     }
-    
+
     func sessionWasInterrupted(canResumeManually resumeManually: Bool) {
-        
-        
+
+
     }
-    
+
     func sessionInterruptionEnded() {
-        
-        
+
+
     }
-    
+
     func didOutput(pixelBuffer: CVPixelBuffer) {
       let currentTimeMs = Date().timeIntervalSince1970 * 1000
       guard (currentTimeMs - previousInferenceTimeMs) >= delayBetweenInferencesMs else { return }
@@ -95,7 +95,7 @@ extension TFImageClassification: CameraFeedManagerDelegate {
         encoder.outputFormatting = .prettyPrinted
         do {
             let data = try encoder.encode(result!.inferences)
-            EventEmitter.sharedInstance.dispatch(name: "TFImageClassification", body:String(data: data, encoding: .utf8))
+            EventEmitter.sharedInstance.dispatch(name: "RNTensorFlowCamera", body:String(data: data, encoding: .utf8))
         } catch {
             print(error)
         }
@@ -135,8 +135,8 @@ class PreviewView: UIView {
       }
       return layer
     }
-    
-    
+
+
     var session: AVCaptureSession? {
       get {
         return previewLayer.session
@@ -145,11 +145,11 @@ class PreviewView: UIView {
         previewLayer.session = newValue
       }
     }
-    
+
     override class var layerClass: AnyClass {
       print("leonid rulse!")
       return AVCaptureVideoPreviewLayer.self
     }
-    
+
 }
 

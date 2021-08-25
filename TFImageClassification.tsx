@@ -17,12 +17,12 @@ interface IProps{
         label:string
     }[])=>void
 }
-let TF = requireNativeComponent('TFImageClassification', null);
-const TFNative = NativeModules.TFImageClassification;
+let TF = requireNativeComponent('RNTensorFlowCamera', null);
+const TFNative = NativeModules.RNTensorFlowCamera;
 console.log(NativeModules)
-const TFImageClassification: React.FunctionComponent<IProps>  = ({onData, style, ref})=>{
+const RNTensorFlowCamera: React.FunctionComponent<IProps>  = ({onData, style, ref})=>{
 
-    const listener = emitter.addListener("TFImageClassification", (e)=>onData(JSON.parse(e)))
+    const listener = emitter.addListener("RNTensorFlowCamera", (e)=>onData(JSON.parse(e)))
 
 
     return(
@@ -30,6 +30,6 @@ const TFImageClassification: React.FunctionComponent<IProps>  = ({onData, style,
     )
 }
 
-export default TFImageClassification
+export default RNTensorFlowCamera
 
 export {TF, TFNative}
