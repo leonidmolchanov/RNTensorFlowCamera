@@ -1,5 +1,4 @@
-import { PropTypes } from "prop-types";
-import React, { Component } from "react";
+import React, {useEffect} from "react";
 import {
     NativeModules,
     NativeEventEmitter,
@@ -9,7 +8,6 @@ import {
     DeviceEventEmitter
 } from "react-native";
 
-const emitter = Platform.OS === 'ios' ? new NativeEventEmitter(NativeModules.ReactNativeEventEmitter) : DeviceEventEmitter
 
 interface IProps{
     onData:(data:{
@@ -18,12 +16,13 @@ interface IProps{
     }[])=>void
 }
 let TF = requireNativeComponent('RNTensorFlowCamera', null);
-const TFNative = NativeModules.RNTensorFlowCamera;
-console.log(NativeModules)
+
 const RNTensorFlowCamera: React.FunctionComponent<IProps>  = ({onData, style, ref})=>{
 
-    const listener = emitter.addListener("RNTensorFlowCamera", (e)=>onData(JSON.parse(e)))
-
+    useEffect(()=>{
+        const emitter = Platform.OS === 'ios' ? new NativeEventEmitter(NativeModules.ReactNativeEventEmitter) : DeviceEventEmitter
+        const listener = emitter.addListener("RNTensorFlowCamera", (e)=>onData(JSON.parse(e)))
+    },[])
 
     return(
         <TF  style={style}/>
@@ -32,4 +31,3 @@ const RNTensorFlowCamera: React.FunctionComponent<IProps>  = ({onData, style, re
 
 export default RNTensorFlowCamera
 
-export {TF, TFNative}

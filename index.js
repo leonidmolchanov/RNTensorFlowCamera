@@ -1,3 +1,4 @@
-import RNTensorFlowCamera, {TF, TFNative} from "./RNTensorFlowCamera";
-
-export { RNTensorFlowCamera, TF , TFNative};
+import RNTensorFlowCamera from "./RNTensorFlowCamera";
+import tenserFlowCamera from "./nativemodule"
+export default RNTensorFlowCamera
+export {tenserFlowCamera}
