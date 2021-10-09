@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
    s.description  = "A native RNTensorFlowCamera react native component."
 
-   s.homepage     = "https://gitlab.audienzz.ch/audienzz/appnexus-app-lib.git"
+   s.homepage     = "https://github.com/leonidmolchanov/RNTensorFlowCamera.git"
    s.license      = "COMMERCIAL"
    s.author       = { "Leonid Molchanov" => "leonidmolchanov1987@gmail.com" }
    s.source_files   = 'ios/*.{h,m,swift,tflite,txt}'

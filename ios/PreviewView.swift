@@ -27,13 +27,19 @@ class RNTensorFlowCamera : RCTViewManager {
 
      var sendDataCallback: RCTResponseSenderBlock?
 
-    @objc func startCapture() {
+     var model_name:String = "mobilenet_quant_v1_224"
+    var model_label:String = "labels"
+
+    @objc func startCapture(_ module_value : String, _ module_label : String) {
+        model_name=module_value
+        model_label=module_label
         print("start Capture")
         cameraCapture.checkCameraConfigurationAndStartSession()
     }
 
     @objc func stopCapture() {
-        print("stop Capture")
+
+            print("stop Capture")
         cameraCapture.stopSession()
     }
 
@@ -46,8 +52,6 @@ class RNTensorFlowCamera : RCTViewManager {
     private lazy var cameraCapture = CameraFeedManager(previewView: previewView);
 
 
-    private var modelDataHandler: ModelDataHandler? =
-      ModelDataHandler(modelFileInfo: MobileNet.modelInfo, labelsFileInfo: MobileNet.labelsInfo)
 
     private var result: Result?
 
@@ -89,6 +93,9 @@ extension RNTensorFlowCamera: CameraFeedManagerDelegate {
       let currentTimeMs = Date().timeIntervalSince1970 * 1000
       guard (currentTimeMs - previousInferenceTimeMs) >= delayBetweenInferencesMs else { return }
       previousInferenceTimeMs = currentTimeMs
+         let modelDataHandler: ModelDataHandler? =
+          ModelDataHandler(modelFileInfo: (name: model_name, extension: "tflite"), labelsFileInfo: (name: model_label, extension: "txt"))
+
       result = modelDataHandler?.runModel(onFrame: pixelBuffer)
         let jsonEncoder = JSONEncoder()
         let encoder = JSONEncoder()
