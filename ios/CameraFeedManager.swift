@@ -149,6 +149,55 @@ class CameraFeedManager: NSObject {
     self.isSessionRunning = self.session.isRunning
   }
 
+    func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .unspecified)
+        for device in discoverySession.devices {
+            if device.position == position {
+                return device
+            }
+        }
+
+        return nil
+    }
+
+     func togglePosition() {
+      print("change position camera")
+        guard let currentCameraInput: AVCaptureInput = self.session.inputs.first else {
+                    return
+                }
+        self.session.beginConfiguration()
+        self.session.removeInput(currentCameraInput)
+
+        var newCamera: AVCaptureDevice! = nil
+                if let input = currentCameraInput as? AVCaptureDeviceInput {
+                    if (input.device.position == .back) {
+                        newCamera = cameraWithPosition(position: .front)
+                    } else {
+                        newCamera = cameraWithPosition(position: .back)
+                    }
+                }
+
+        //Add input to session
+               var err: NSError?
+               var newVideoInput: AVCaptureDeviceInput!
+               do {
+                   newVideoInput = try AVCaptureDeviceInput(device: newCamera)
+               } catch let err1 as NSError {
+                   err = err1
+                   newVideoInput = nil
+               }
+
+               if newVideoInput == nil || err != nil {
+                   print("Error creating capture device input: \(err?.localizedDescription)")
+               } else {
+                   self.session.addInput(newVideoInput)
+               }
+
+               //Commit all the configuration changes at once
+        self.session.commitConfiguration()
+
+    }
+
   // MARK: Session Configuration Methods.
   /**
  This method requests for camera permissions and handles the configuration of the session and stores the result of configuration.
@@ -340,7 +389,7 @@ extension CameraFeedManager: AVCaptureVideoDataOutputSampleBufferDelegate {
       return
     }
 
-    
+
     // Delegates the pixel buffer to the ViewController.
     delegate?.didOutput(pixelBuffer: imagePixelBuffer)
   }

@@ -38,9 +38,13 @@ class RNTensorFlowCamera : RCTViewManager {
     }
 
     @objc func stopCapture() {
-
             print("stop Capture")
         cameraCapture.stopSession()
+    }
+
+    @objc func togglePosition () {
+//        AVCaptureDevice.Position.
+        cameraCapture.togglePosition()
     }
 
     private var eventEmitter: ReactNativeEventEmitter!

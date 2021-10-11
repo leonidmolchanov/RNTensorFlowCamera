@@ -13,6 +13,10 @@ const tenserFlowCamera = {
   stopCapture: () => {
     return tenserFlowCamera_native.stopCapture();
   },
+  togglePosition:() =>{
+    return tenserFlowCamera_native.togglePosition();
+
+  }
 };
 
 export default tenserFlowCamera;
