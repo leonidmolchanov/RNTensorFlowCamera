@@ -24,18 +24,42 @@ import AVFoundation
 @objc(RNTensorFlowCamera)
 class RNTensorFlowCamera : RCTViewManager {
 
+    var modelWidth: Int = 224
+    var modelHeight: Int = 224
+
+
 
      var sendDataCallback: RCTResponseSenderBlock?
 
      var model_name:String = "mobilenet_quant_v1_224"
     var model_label:String = "labels"
 
-    @objc func startCapture(_ module_value : String, _ module_label : String) {
+    @objc func setModelHeight(_ model_height_value: NSNumber) {
+        modelHeight = model_height_value.intValue
+        print(model_height_value.intValue);
+      print("height is set");
+    }
+
+    @objc func setModelWidth(_ model_width_value: NSNumber) {
+        modelWidth = model_width_value.intValue
+        print(model_width_value.intValue);
+      print("width is set");
+    }
+
+    @objc func startCapture(_ module_value : String,
+                            _ module_label : String,
+                            _ model_height_value: NSNumber,
+                            _ model_width_value: NSNumber
+    ) {
         model_name=module_value
         model_label=module_label
+        modelHeight = model_height_value.intValue
+        modelWidth = model_width_value.intValue
+
         print("start Capture")
         cameraCapture.checkCameraConfigurationAndStartSession()
     }
+
 
     @objc func stopCapture() {
             print("stop Capture")
@@ -98,9 +122,15 @@ extension RNTensorFlowCamera: CameraFeedManagerDelegate {
       guard (currentTimeMs - previousInferenceTimeMs) >= delayBetweenInferencesMs else { return }
       previousInferenceTimeMs = currentTimeMs
          let modelDataHandler: ModelDataHandler? =
-          ModelDataHandler(modelFileInfo: (name: model_name, extension: "tflite"), labelsFileInfo: (name: model_label, extension: "txt"))
+          ModelDataHandler(
+            modelFileInfo: (name: model_name, extension: "tflite"),
+            labelsFileInfo: (name: model_label, extension: "txt"),
+            modelWidth: modelWidth,
+            modelHeight: modelHeight
+          )
 
       result = modelDataHandler?.runModel(onFrame: pixelBuffer)
+//        print(result)
         let jsonEncoder = JSONEncoder()
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted

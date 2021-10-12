@@ -43,22 +43,20 @@ enum MobileNet {
 /// results for a successful inference.
 class ModelDataHandler {
 
-    
+
   // MARK: - Internal Properties
 
   /// The current thread count used by the TensorFlow Lite Interpreter.
   let threadCount: Int
-
-  let resultCount = 3
-  let threadCountLimit = 10
+  let resultCount:Int
+  let threadCountLimit:Int
 
   // MARK: - Model Parameters
 
-  let batchSize = 1
-  let inputChannels = 3
-  let inputWidth = 224
-  let inputHeight = 224
-
+  let batchSize:Int
+  let inputChannels:Int
+    let inputWidth:Int
+    let inputHeight:Int
   // MARK: - Private Properties
 
   /// List of labels from the given labels file.
@@ -74,8 +72,25 @@ class ModelDataHandler {
 
   /// A failable initializer for `ModelDataHandler`. A new instance is created if the model and
   /// labels files are successfully loaded from the app's main bundle. Default `threadCount` is 1.
-  init?(modelFileInfo: FileInfo, labelsFileInfo: FileInfo, threadCount: Int = 1) {
-    
+    init?(
+        modelFileInfo: FileInfo,
+        labelsFileInfo: FileInfo,
+        modelWidth:Int = 224,
+        modelHeight:Int = 224,
+        threadCount: Int = 1,
+        batchSize:Int = 1,
+        inputChannels:Int = 3,
+        resultCount:Int = 3,
+        threadCountLimit:Int = 10
+    ) {
+
+        // Cusom value
+        self.inputWidth = modelWidth;
+        self.inputHeight = modelHeight;
+        self.batchSize = batchSize;
+        self.inputChannels = inputChannels;
+        self.resultCount = resultCount;
+        self.threadCountLimit = threadCountLimit;
     print("TF init")
     let modelFilename = modelFileInfo.name
 
@@ -109,8 +124,8 @@ class ModelDataHandler {
 
   /// Performs image preprocessing, invokes the `Interpreter`, and processes the inference results.
   func runModel(onFrame pixelBuffer: CVPixelBuffer) -> Result? {
-  
-    
+
+
     let sourcePixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer)
     assert(sourcePixelFormat == kCVPixelFormatType_32ARGB ||
              sourcePixelFormat == kCVPixelFormatType_32BGRA ||
@@ -234,23 +249,23 @@ class ModelDataHandler {
     guard let sourceData = CVPixelBufferGetBaseAddress(buffer) else {
       return nil
     }
-    
+
     let width = CVPixelBufferGetWidth(buffer)
     let height = CVPixelBufferGetHeight(buffer)
     let sourceBytesPerRow = CVPixelBufferGetBytesPerRow(buffer)
     let destinationChannelCount = 3
     let destinationBytesPerRow = destinationChannelCount * width
-    
+
     var sourceBuffer = vImage_Buffer(data: sourceData,
                                      height: vImagePixelCount(height),
                                      width: vImagePixelCount(width),
                                      rowBytes: sourceBytesPerRow)
-    
+
     guard let destinationData = malloc(height * destinationBytesPerRow) else {
       print("Error: out of memory")
       return nil
     }
-    
+
     defer {
         free(destinationData)
     }
