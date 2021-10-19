@@ -8,7 +8,7 @@ const tenserFlowCamera = {
   }) => {
 
 
-    return tenserFlowCamera_native.startCapture(model.model_name, model.labels_name);
+    return tenserFlowCamera_native.startCapture(model.model_name, model.labels_name, model.width, model.height);
   },
   stopCapture: () => {
     return tenserFlowCamera_native.stopCapture();
